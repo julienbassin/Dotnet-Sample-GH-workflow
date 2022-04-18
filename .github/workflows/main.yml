@@ -5,6 +5,21 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_call:
+    inputs:
+      configuration:
+        required: true
+        type: string
+        default: release
+      project_file:
+        required: true
+        type: string
+      project_test_file:
+        required: false
+        type: string
+      output_path:
+        required: false
+        type: string      
 
 jobs:
   build:
