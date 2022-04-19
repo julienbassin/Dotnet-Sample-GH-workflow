@@ -1,0 +1,14 @@
+name: build-core
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    uses: ./.github/workflows/build-base.yml
+    with:
+      configuration: release
+      project_file: AzLearnGitLab.csproj
+      output_path: app/publish
